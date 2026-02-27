@@ -8,6 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import { useState } from "react";
+import GItems from "./components/GItems";
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState("");
@@ -42,10 +43,7 @@ export default function App() {
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
-            return(
-            <View>
-              <Text style={styles.goalItem}>{itemData.item.text}</Text>
-            </View>);
+            return<GItems text = {itemData.item.text}/>;
           }}
           keyExtractor={(item,index) => {
             return item.id
@@ -80,11 +78,5 @@ const styles = StyleSheet.create({
   },
   goalContainer: {
     flex: 4,
-  },
-  goalItem: {
-    margin: 8,
-    borderRadius: 6,
-    backgroundColor: "#0d031b",
-    color: "white",
   },
 });
