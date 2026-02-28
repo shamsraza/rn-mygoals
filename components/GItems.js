@@ -1,4 +1,4 @@
-import { StyleSheet ,View,Text} from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 function GItems(props) {
   return (
@@ -11,10 +11,10 @@ function GItems(props) {
 export default GItems;
 
 const styles = StyleSheet.create({
-goalItem: {
+  goalItem: {
     margin: 8,
     borderRadius: 6,
     backgroundColor: "#0d031b",
     color: "white",
-  }
+  },
 });
