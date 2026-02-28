@@ -13,6 +13,10 @@ export default function App() {
     ]);
   }
 
+  function deleteGoalHandler() {
+    console.log("DELETE");
+  }
+
   return (
     <View style={styles.appContainer}>
       <GInput onGoalAdd={addGoalHandler} />
@@ -28,7 +32,12 @@ export default function App() {
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
-            return <GItems text={itemData.item.text} />;
+            return (
+              <GItems
+                text={itemData.item.text}
+                onDeleteItem={deleteGoalHandler}
+              />
+            );
           }}
           keyExtractor={(item, index) => {
             return item.id;
